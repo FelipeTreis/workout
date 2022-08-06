@@ -1,0 +1,41 @@
+<div class="workout workout-list-item">
+    {% if work.cover.url is not Null %}
+        <div class="workout-cover">
+            <a href="{% url 'workout:workout' work.id %}">
+                <img src="{{ work.cover.url }}" alt="" />
+            </a>
+        </div>
+    {% endif %}
+
+    <div class="workout-title-container">
+        <h2 class="workout-title">
+            <a href="{% url 'workout:workout' work.id %}">
+                {{ work.title }}
+            </a>
+        </h2>
+        <div class="workout-author-item">
+            <span class="workout-author-item">
+                <i class="fas fa-calendar-alt"></i>
+                {{work.created_at|date:"d/m/Y" }} às {{ work.created_at|date:"H:i" }}
+            </span>
+        </div>
+    </div>
+
+    {% if is_detail_page is not True %}
+        <footer class="workout-footer">
+            <a class="workout-read-more button button-dark button-full-width" href="{% url 'workout:workout' work.id %}">
+                <i class="fas fa-eye"></i>
+                <span>See more details</span>
+            </a>
+        </footer>
+    {% endif %}
+
+    {% if is_detail_page is True %}
+        <div class="workout-content description">
+            <p>
+                {{ work.description }}
+            </p>
+        </div>
+        <a class="back" href="{% url 'workout:home' %}"><i class="fas fa-backward"></i> Back</a>
+    {% endif %}
+</div>

@@ -1,3 +1,15 @@
-<h1>
-    oi
-</h1>
+{% extends 'global/base.html' %}
+
+{% block title %} Home | {% endblock title %} 
+
+{% block content %}
+<div class="main-content main-content-list container">
+    {% for work in workout %}
+        {% include 'workout/partials/workout.html' %}
+    {% empty %}
+        <div class="margin">
+            <h1>Didn't find workouts here ☠️</h1>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

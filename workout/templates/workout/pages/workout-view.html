@@ -1,0 +1,9 @@
+{% extends 'global/base.html' %}
+
+{% block title %} {{ workouts.title }} | {% endblock title %}  
+
+{% block content %}
+<div class="main-content main-content-detail container">
+    {% include 'workout/partials/workout.html' %}
+</div>
+{% endblock content %}
