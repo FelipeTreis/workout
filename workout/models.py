@@ -5,7 +5,7 @@ from django.db import models
 class Workout(models.Model):
 
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=500)
+    description = models.TextField()
     slug = models.SlugField(unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

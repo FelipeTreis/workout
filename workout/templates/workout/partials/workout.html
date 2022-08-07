@@ -13,12 +13,6 @@
                 {{ work.title }}
             </a>
         </h2>
-        <div class="workout-author-item">
-            <span class="workout-author-item">
-                <i class="fas fa-calendar-alt"></i>
-                {{work.created_at|date:"d/m/Y" }} às {{ work.created_at|date:"H:i" }}
-            </span>
-        </div>
     </div>
 
     {% if is_detail_page is not True %}
